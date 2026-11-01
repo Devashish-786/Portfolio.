@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEVASHISH ANANT — B.Tech CSE Undergraduate & Software Developer</title>
+  <meta name="description" content="Swiss Kinetic Portfolio of Devashish Anant — 1st-Year B.Tech Computer Science & Engineering undergraduate at Medi-Caps University, Indore. Pursuing HTML5, CSS3, Python, and Data Structures & Algorithms in C++.">
+  <meta name="theme-color" content="#060908">
+
+  <!-- Google Fonts: Space Grotesk, JetBrains Mono, Instrument Serif -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            serif: ['Instrument Serif', 'serif'],
+          },
+          colors: {
+            obsidian: {
+              950: '#060908',
+              900: '#0b110e',
+              800: '#111a16',
+            },
+            emerald: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Emerald Scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060908;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(16, 185, 129, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(52, 211, 153, 0.65);
+    }
+
+    /* Custom Kinetic Cursor for Fine Pointers (Desktop) */
+    @media (pointer: fine) {
+      body, a, button {
+        cursor: none;
+      }
+    }
+
+    #cursor-follower, #cursor-dot {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      transform: translate3d(-100px, -100px, 0);
+      will-change: transform;
+    }
+
+    /* Swiss Card Hover Elevation */
+    .swiss-card {
+      background-color: rgba(11, 17, 14, 0.78);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.28s ease,
+                  box-shadow 0.28s ease;
+    }
+    .swiss-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(52, 211, 153, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7),
+                  0 0 25px -5px rgba(16, 185, 129, 0.14);
+    }
+  </style>
+</head>
+
+<body class="bg-[#060908] text-[#eef5f2] min-h-screen relative antialiased selection:bg-emerald-400 selection:text-[#060908] overflow-x-hidden font-sans">
+
+  <!-- =====================================================================
+       CUSTOM HARDWARE-ACCELERATED EMERALD SPRING CURSOR
+  ===================================================================== -->
+  <div id="cursor-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399] fixed top-0 left-0 hidden md:block"></div>
+  <div id="cursor-follower" class="w-9 h-9 rounded-full border border-emerald-400/35 fixed top-0 left-0 hidden md:flex items-center justify-center transition-[width,height,border-color,background-color] duration-150 ease-out">
+    <div id="cursor-halo" class="w-2 h-2 rounded-full bg-emerald-400/40 opacity-0 transition-opacity duration-200"></div>
+  </div>
+
+  <!-- =====================================================================
+       GREENISH MOLECULAR & PARTICLE ATTRACTION CANVAS (60-120 FPS)
+  ===================================================================== -->
+  <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- ARCHITECTURAL SUBTLE VERTICAL GRID OVERLAY -->
+  <div class="fixed inset-0 pointer-events-none z-0 max-w-7xl mx-auto px-6 sm:px-10 flex justify-between opacity-[0.045]">
+    <div class="w-px h-full bg-emerald-400"></div>
+    <div class="w-px h-full bg-emerald-400 hidden sm:block"></div>
+    <div class="w-px h-full bg-emerald-400 hidden lg:block"></div>
+    <div class="w-px h-full bg-emerald-400"></div>
+  </div>
+
+  <!-- =====================================================================
+       TOP TELEMETRY & SWISS NAVIGATION BAR
+  ===================================================================== -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl border-b border-emerald-500/15 bg-[#060908]/80">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 h-16 flex items-center justify-between gap-4">
+      
+      <!-- Left: Identity Monogram & Name -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a href="#top" class="group flex items-center gap-2.5 text-left">
+          <span class="px-2 py-0.5 text-xs font-mono font-semibold rounded bg-emerald-400 text-[#060908]">
+            DA—26
+          </span>
+          <span class="font-semibold tracking-tight text-sm sm:text-base group-hover:text-emerald-400 transition-colors">
+            DEVASHISH ANANT
+          </span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-emerald-500/15 text-xs font-mono text-emerald-300/75">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>1ST YEAR B.TECH CSE // MEDI-CAPS UNIVERSITY</span>
+        </div>
+      </div>
+
+      <!-- Center: Live Telemetry Clock & Pointer -->
+      <div class="hidden xl:flex items-center gap-6 font-mono text-[11px] text-emerald-100/55">
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="clock" class="w-3 h-3 text-emerald-400"></i>
+          <span id="hud-clock">00:00:00.00 UTC</span>
+        </span>
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="atom" class="w-3 h-3 text-emerald-400"></i>
+          <span>MOLECULAR ATTRACTION: ACTIVE</span>
+        </span>
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="crosshair" class="w-3 h-3 text-emerald-400/70"></i>
+          <span id="hud-pointer">PTR: 0000×0000</span>
+        </span>
+      </div>
+
+      <!-- Right: Clean Anchor Navigation -->
+      <nav aria-label="Primary Navigation" class="flex items-center gap-1 sm:gap-2 font-mono text-xs">
+        <a href="#about" class="px-2.5 py-1.5 rounded-lg text-emerald-100/75 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+          ABOUT
+        </a>
+        <a href="#projects" class="px-2.5 py-1.5 rounded-lg text-emerald-100/75 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+          PROJECTS
+        </a>
+        <a href="#arsenal" class="px-2.5 py-1.5 rounded-lg text-emerald-100/75 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+          ARSENAL
+        </a>
+        <a href="#contact" class="px-3 py-1.5 rounded-lg bg-emerald-400 text-[#060908] font-semibold hover:bg-emerald-300 transition-colors">
+          CONTACT
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN PAGE CONTAINER
+  ===================================================================== -->
+  <main id="top" class="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 pt-10 sm:pt-16 pb-24">
+
+    <!-- Top Coordinate Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-emerald-500/15 font-mono text-xs text-emerald-100/60">
+      <div class="flex items-center gap-2">
+        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <span>22.7196° N, 75.8577° E // INDORE, IN</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <span>EDITION 2026 // SWISS KINETIC EMERALD</span>
+        <span class="flex items-center gap-1.5 text-emerald-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>HOVER TO ATTRACT MOLECULES</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         KINETIC HERO SECTION
+    =================================================================== -->
+    <section class="py-12 sm:py-20 lg:py-24">
+      <div class="max-w-5xl">
+        
+        <!-- Role Monogram Tag -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-400/25 bg-emerald-500/[0.06] font-mono text-xs text-emerald-300 mb-6">
+          <i data-lucide="terminal" class="w-3.5 h-3.5 text-emerald-400"></i>
+          <span>B.TECH CSE UNDERGRADUATE &amp; SOFTWARE DEVELOPER</span>
+        </div>
+
+        <!-- Dynamic Typographic Headline -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.08] select-none">
+          Engineering <span class="font-serif italic font-normal tracking-normal text-emerald-400">silent, high-frequency</span> digital logic where algorithmic rigor meets <span class="font-serif italic font-normal tracking-normal text-emerald-200">tactile web architecture</span>.
+        </h1>
+
+        <!-- Intro Paragraph -->
+        <p class="text-base sm:text-xl text-emerald-50/70 mt-8 max-w-3xl font-light leading-relaxed">
+          I am <strong class="font-medium text-white">Devashish Anant</strong>, a 1st-year B.Tech Computer Science &amp; Engineering undergraduate at <strong class="font-medium text-white">Medi-Caps University, Indore</strong>. Focused on building clean web interfaces in HTML5 &amp; CSS3, computational scripts in Python, and high-efficiency Data Structures &amp; Algorithms in C++.
+        </p>
+
+        <!-- Hero CTAs -->
+        <div class="mt-10 sm:mt-12 flex flex-wrap items-center gap-3">
+          <a href="#projects" class="px-5 py-3 rounded-lg bg-emerald-400 text-[#060908] font-mono text-xs font-semibold flex items-center gap-2 shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:bg-emerald-300 active:scale-95 transition-all">
+            <span>EXPLORE PROJECTS</span>
+            <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+          </a>
+
+          <a href="#arsenal" class="px-4 py-3 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.04] font-mono text-xs flex items-center gap-2 hover:border-emerald-400/60 hover:bg-emerald-500/10 active:scale-95 transition-all">
+            <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>TECHNICAL ARSENAL</span>
+          </a>
+
+          <a href="#contact" class="px-4 py-3 rounded-lg border border-emerald-500/25 bg-emerald-500/[0.04] font-mono text-xs flex items-center gap-2 hover:border-emerald-400/60 hover:bg-emerald-500/10 active:scale-95 transition-all">
+            <i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>devashishanant4@gmail.com</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         ABOUT SECTION
+    =================================================================== -->
+    <section id="about" class="py-14 border-t border-emerald-500/15">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <div class="lg:col-span-4">
+          <span class="font-mono text-xs uppercase tracking-widest text-emerald-400">00 // IDENTITY &amp; MANIFESTO</span>
+          <h2 class="text-2xl sm:text-3xl font-medium tracking-tight mt-2">First-Principles Engineering</h2>
+          <p class="font-mono text-xs text-emerald-100/50 mt-2">MEDI-CAPS UNIVERSITY, INDORE</p>
+        </div>
+
+        <div class="lg:col-span-8 space-y-6">
+          <div class="swiss-card rounded-2xl border border-emerald-500/20 p-6 sm:p-8 space-y-4">
+            <p class="text-sm sm:text-base text-emerald-50/80 leading-relaxed font-light">
+              As a <span class="text-emerald-400 font-medium">1st-year B.Tech Computer Science &amp; Engineering</span> student at <span class="text-white font-medium">Medi-Caps University, Indore</span>, my focus is on building a rock-solid foundation in computer science rather than relying on black-box abstractions.
+            </p>
+            <p class="text-sm sm:text-base text-emerald-50/75 leading-relaxed font-light">
+              Every project I build—from foundational browser logic like a <span class="text-emerald-300">Scientific Calculator</span> and <span class="text-emerald-300">Tic-Tac-Toe</span> to complex systems currently in active development like my <span class="text-emerald-300">Formula 1 Telemetry &amp; Race Strategy Simulation</span>—is crafted to sharpen my command over DOM architecture, state machines, mathematical modeling, and algorithmic problem solving.
+            </p>
+
+            <!-- Key Telemetry Metrics -->
+            <div class="pt-4 border-t border-emerald-500/15 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
+              <div>
+                <div class="text-xs text-emerald-400">DEGREE</div>
+                <div class="text-sm font-semibold mt-0.5">B.Tech CSE (1st Yr)</div>
+              </div>
+              <div>
+                <div class="text-xs text-emerald-400">UNIVERSITY</div>
+                <div class="text-sm font-semibold mt-0.5">Medi-Caps Indore</div>
+              </div>
+              <div>
+                <div class="text-xs text-emerald-400">CORE STACK</div>
+                <div class="text-sm font-semibold mt-0.5">HTML/CSS · Py · C++</div>
+              </div>
+              <div>
+                <div class="text-xs text-emerald-400">STATUS</div>
+                <div class="text-sm font-semibold mt-0.5 text-emerald-400">Building &amp; Shipping</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PROJECTS ARCHIVE: BASIC / FOUNDATIONAL & ADVANCED / IN-PROGRESS
+    =================================================================== -->
+    <section id="projects" class="pt-14 border-t border-emerald-500/15">
+      
+      <!-- Section Header -->
+      <div class="flex flex-wrap items-end justify-between gap-4 pb-8 border-b border-emerald-500/15">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-emerald-400">ARCHITECTURAL ARCHIVE //</span>
+          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight mt-1">Engineered Works &amp; R&amp;D Pipeline</h2>
+        </div>
+        <div class="font-mono text-xs px-3 py-1 rounded-full border border-emerald-400/25 bg-emerald-500/10 text-emerald-300">
+          BASIC FOUNDATIONS &bull; ADVANCED SIMULATIONS
+        </div>
+      </div>
+
+      <!-- =================================================================
+           PART A: 01 // BASIC & FOUNDATIONAL PROJECTS (COMPLETED)
+      ================================================================= -->
+      <div class="mt-10">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded bg-emerald-500/15 border border-emerald-400/30 font-mono text-xs text-emerald-300 font-semibold">
+              TIER 01
+            </span>
+            <h3 class="font-mono text-sm sm:text-base uppercase tracking-wider text-emerald-100">
+              Basic &amp; Foundational Projects
+            </h3>
+          </div>
+          <span class="font-mono text-xs text-emerald-400/70 hidden sm:inline">COMPLETED MODULES</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- PROJECT 1: Scientific Calculator in HTML -->
+          <article class="swiss-card group rounded-2xl border border-emerald-500/20 p-6 sm:p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs mb-5">
+                <span class="text-emerald-400 font-medium">MOD-01 // COMPUTATIONAL UI</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[11px]">
+                  DEPLOYED // HTML5 + CSS3
+                </span>
+              </div>
+
+              <!-- Kinetic SVG Representation: Scientific Calculator Sine/Cosine & Keypad Matrix -->
+              <div class="relative h-32 w-full overflow-hidden rounded-xl border border-emerald-500/15 bg-[#050807] flex items-center justify-center p-3 mb-6 group-hover:border-emerald-400/35 transition-colors">
+                <svg class="w-full h-full text-emerald-400 opacity-80 group-hover:opacity-100 transition-opacity" viewBox="0 0 280 80">
+                  <line x1="0" y1="40" x2="280" y2="40" stroke="currentColor" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="3 3"/>
+                  <path d="M 10 40 Q 45 5, 80 40 T 150 40 T 220 40 T 270 40" fill="none" stroke="currentColor" stroke-width="1.75"/>
+                  <circle cx="80" cy="40" r="3" fill="#34d399"/>
+                  <circle cx="150" cy="40" r="3" fill="#34d399"/>
+                  <circle cx="220" cy="40" r="3" fill="#34d399"/>
+                  <text x="12" y="20" fill="currentColor" font-family="JetBrains Mono" font-size="9" opacity="0.7">f(x) = sin(x) + log(x)</text>
+                </svg>
+                <span class="absolute bottom-2 right-3 font-mono text-[10px] text-emerald-300/60 uppercase tracking-widest">
+                  TRIG · LOG · EXP · GRID
+                </span>
+              </div>
+
+              <h4 class="text-xl sm:text-2xl font-medium tracking-tight group-hover:text-emerald-400 transition-colors">
+                Scientific Calculator in HTML
+              </h4>
+              <p class="text-xs sm:text-sm text-emerald-50/70 mt-2.5 leading-relaxed font-light">
+                Precision scientific calculator engineered with semantic HTML5, CSS3 Grid architecture, and vanilla JavaScript expression evaluation. Supports trigonometric operations (<code class="font-mono text-emerald-300">sin</code>, <code class="font-mono text-emerald-300">cos</code>, <code class="font-mono text-emerald-300">tan</code>), logarithmic &amp; exponential functions, bracket precedence parsing, and a responsive tactile keypad.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-emerald-500/15 flex items-center justify-between gap-2">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">HTML5</span>
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">CSS3 Grid</span>
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Math Parser</span>
+              </div>
+              <span class="font-mono text-[11px] text-emerald-400 flex items-center gap-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                <span>VERIFIED</span>
+              </span>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Tic-Tac-Toe Strategy Game -->
+          <article class="swiss-card group rounded-2xl border border-emerald-500/20 p-6 sm:p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs mb-5">
+                <span class="text-emerald-400 font-medium">MOD-02 // STATE MACHINE</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[11px]">
+                  DEPLOYED // GAME LOGIC
+                </span>
+              </div>
+
+              <!-- Kinetic SVG Representation: 3x3 Matrix & Win Vector -->
+              <div class="relative h-32 w-full overflow-hidden rounded-xl border border-emerald-500/15 bg-[#050807] flex items-center justify-center p-3 mb-6 group-hover:border-emerald-400/35 transition-colors">
+                <svg class="w-full h-full text-emerald-400 opacity-85 group-hover:opacity-100 transition-opacity" viewBox="0 0 280 80">
+                  <!-- 3x3 Grid Centered -->
+                  <line x1="125" y1="10" x2="125" y2="70" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.45"/>
+                  <line x1="155" y1="10" x2="155" y2="70" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.45"/>
+                  <line x1="100" y1="30" x2="180" y2="30" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.45"/>
+                  <line x1="100" y1="50" x2="180" y2="50" stroke="currentColor" stroke-width="1.4" stroke-opacity="0.45"/>
+                  <!-- X and O markers -->
+                  <circle cx="112" cy="20" r="5" fill="none" stroke="#34d399" stroke-width="1.6"/>
+                  <circle cx="140" cy="40" r="5" fill="none" stroke="#34d399" stroke-width="1.6"/>
+                  <circle cx="168" cy="60" r="5" fill="none" stroke="#34d399" stroke-width="1.6"/>
+                  <!-- Winning diagonal vector -->
+                  <line x1="104" y1="14" x2="176" y2="66" stroke="#10b981" stroke-width="2" stroke-dasharray="3 2"/>
+                </svg>
+                <span class="absolute bottom-2 right-3 font-mono text-[10px] text-emerald-300/60 uppercase tracking-widest">
+                  3×3 MATRIX · WIN VECTOR
+                </span>
+              </div>
+
+              <h4 class="text-xl sm:text-2xl font-medium tracking-tight group-hover:text-emerald-400 transition-colors">
+                Tic-Tac-Toe Strategy Game
+              </h4>
+              <p class="text-xs sm:text-sm text-emerald-50/70 mt-2.5 leading-relaxed font-light">
+                Interactive 3×3 grid strategy game built with deterministic state management, instant 8-axis win/draw vector detection, animated winning strike-through highlights, turn telemetry, and zero-reload match reset controls.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-emerald-500/15 flex items-center justify-between gap-2">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">HTML5</span>
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">CSS3 Animations</span>
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Game Logic</span>
+              </div>
+              <span class="font-mono text-[11px] text-emerald-400 flex items-center gap-1">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                <span>VERIFIED</span>
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- =================================================================
+           PART B: 02 // ADVANCED SYSTEMS & R&D PIPELINE (IN PROGRESS & UPCOMING)
+      ================================================================= -->
+      <div class="mt-14">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <span class="px-2.5 py-1 rounded bg-amber-500/15 border border-amber-400/35 font-mono text-xs text-amber-300 font-semibold">
+              TIER 02
+            </span>
+            <h3 class="font-mono text-sm sm:text-base uppercase tracking-wider text-emerald-100">
+              Advanced Systems &amp; Active R&amp;D Pipeline
+            </h3>
+          </div>
+          <span class="font-mono text-xs text-amber-300/80 hidden sm:inline">IN PROGRESS &amp; INCUBATING</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          <!-- PROJECT 3: Formula 1 Telemetry & Race Strategy Simulation (IN PROGRESS) -->
+          <article class="swiss-card lg:col-span-7 group rounded-2xl border border-emerald-400/35 p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs mb-5">
+                <span class="text-emerald-400 font-semibold">ADV-01 // MOTORSPORT PHYSICS &amp; TELEMETRY</span>
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 text-[11px] font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                  <span>IN PROGRESS // ACTIVE R&amp;D</span>
+                </span>
+              </div>
+
+              <!-- Kinetic SVG Representation: F1 Telemetry Trace & Tire Degradation Curve -->
+              <div class="relative h-36 w-full overflow-hidden rounded-xl border border-emerald-500/20 bg-[#050807] flex items-center justify-center p-4 mb-6 group-hover:border-emerald-400/45 transition-colors">
+                <svg class="w-full h-full text-emerald-400" viewBox="0 0 360 90">
+                  <!-- Telemetry Grid Lines -->
+                  <line x1="0" y1="22" x2="360" y2="22" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+                  <line x1="0" y1="45" x2="360" y2="45" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+                  <line x1="0" y1="68" x2="360" y2="68" stroke="currentColor" stroke-opacity="0.12" stroke-width="1"/>
+                  <!-- Throttle / Speed Telemetry Trace -->
+                  <polyline points="10,72 45,25 80,20 110,58 145,18 190,15 220,62 260,22 310,14 350,35" fill="none" stroke="#34d399" stroke-width="2"/>
+                  <!-- Tire Degradation Curve -->
+                  <path d="M 10 30 Q 180 38, 350 75" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4 4"/>
+                  <circle cx="190" cy="15" r="3.5" fill="#34d399"/>
+                  <circle cx="310" cy="14" r="3.5" fill="#34d399"/>
+                  <text x="14" y="15" fill="#34d399" font-family="JetBrains Mono" font-size="8.5">RPM / APEX VELOCITY TRACE</text>
+                  <text x="235" y="82" fill="#fbbf24" font-family="JetBrains Mono" font-size="8.5">TIRE DEG // SOFT-MEDIUM-HARD</text>
+                </svg>
+              </div>
+
+              <h4 class="text-2xl sm:text-3xl font-medium tracking-tight group-hover:text-emerald-400 transition-colors">
+                Formula 1 Telemetry &amp; Race Strategy Simulation
+              </h4>
+              <p class="text-xs sm:text-sm text-emerald-50/75 mt-3 leading-relaxed font-light">
+                An advanced motorsport simulation engine currently in active development. Models multi-car lap-time physics, tire compound thermal degradation curves (<span class="text-rose-400 font-mono text-xs">Soft</span> / <span class="text-amber-300 font-mono text-xs">Medium</span> / <span class="text-white font-mono text-xs">Hard</span>), fuel-load mass delta calculations, DRS overtake probability zones, and pit-wall undercut/overcut strategy optimization.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-emerald-500/15 flex flex-wrap items-center justify-between gap-3">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/25 text-emerald-200">C++ / DSA</span>
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/25 text-emerald-200">Python Physics</span>
+                <span class="px-2.5 py-0.5 rounded font-mono text-[11px] bg-emerald-500/10 border border-emerald-500/25 text-emerald-200">HTML5 Canvas Telemetry</span>
+              </div>
+              <span class="font-mono text-xs text-amber-300 flex items-center gap-1.5">
+                <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                <span>ACTIVE DEVELOPMENT</span>
+              </span>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: And Many More Coming Soon (Blueprint Pipeline Card) -->
+          <article class="swiss-card lg:col-span-5 rounded-2xl border border-dashed border-emerald-400/35 p-6 sm:p-8 flex flex-col justify-between bg-emerald-950/[0.12]">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs mb-5">
+                <span class="text-emerald-400">PIPELINE // LAB QUEUE</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-[11px]">
+                  INCUBATING
+                </span>
+              </div>
+
+              <div class="w-12 h-12 rounded-xl border border-emerald-400/30 bg-emerald-500/10 flex items-center justify-center mb-6">
+                <i data-lucide="sparkles" class="w-5 h-5 text-emerald-400"></i>
+              </div>
+
+              <h4 class="text-xl sm:text-2xl font-medium tracking-tight text-white">
+                And Many More Coming Soon...
+              </h4>
+              <p class="text-xs sm:text-sm text-emerald-50/70 mt-3 leading-relaxed font-light">
+                My engineering repository is continuously expanding. Additional basic and advanced systems are currently being architected in the lab as I progress through my B.Tech CSE curriculum at Medi-Caps University:
+              </p>
+
+              <ul class="mt-4 space-y-2 font-mono text-xs text-emerald-200/80">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>Sorting &amp; Graph Pathfinding Visualizer (DSA C++)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>Automated CLI Workflow &amp; Data Parser (Python)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>Interactive Kinetic Web Experiments (HTML5 &amp; CSS3)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-emerald-500/15 flex items-center justify-between font-mono text-xs text-emerald-300/80">
+              <span>NEXT RELEASE CYCLE // 2026</span>
+              <a href="#contact" class="text-emerald-400 hover:underline flex items-center gap-1">
+                <span>COLLABORATE</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         TECHNICAL ARSENAL & LANGUAGES PURSUING
+    =================================================================== -->
+    <section id="arsenal" class="mt-20 pt-16 border-t border-emerald-500/15">
+      
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-widest text-emerald-400">CAPABILITY ARSENAL //</span>
+          <h2 class="text-2xl sm:text-3xl font-medium tracking-tight mt-1">Languages &amp; Foundations Currently Pursuing</h2>
+        </div>
+        <div class="font-mono text-xs text-emerald-300/60">
+          HTML5 &bull; CSS3 &bull; PYTHON &bull; DSA IN C++
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 01 // HTML5 -->
+        <div class="swiss-card p-6 rounded-xl border border-emerald-500/20">
+          <div class="flex items-center justify-between font-mono text-xs text-emerald-400 mb-4">
+            <span>01 // STRUCTURE</span>
+            <i data-lucide="code-2" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-semibold text-lg">HTML5 Architecture</h3>
+          <p class="text-xs text-emerald-50/65 mt-1.5 mb-5 leading-relaxed">
+            Semantic document hierarchies, accessible DOM trees, structured forms, and high-performance canvas integration.
+          </p>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Semantic DOM</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">HTML5 Canvas</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Accessibility</span>
+          </div>
+        </div>
+
+        <!-- 02 // CSS3 -->
+        <div class="swiss-card p-6 rounded-xl border border-emerald-500/20">
+          <div class="flex items-center justify-between font-mono text-xs text-emerald-400 mb-4">
+            <span>02 // STYLING &amp; MOTION</span>
+            <i data-lucide="layout-grid" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Modern CSS3</h3>
+          <p class="text-xs text-emerald-50/65 mt-1.5 mb-5 leading-relaxed">
+            Swiss typographic grid systems, responsive Flexbox &amp; CSS Grid layouts, custom design tokens, and hardware-accelerated transitions.
+          </p>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">CSS Grid</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Flexbox</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Responsive UI</span>
+          </div>
+        </div>
+
+        <!-- 03 // PYTHON -->
+        <div class="swiss-card p-6 rounded-xl border border-emerald-500/20">
+          <div class="flex items-center justify-between font-mono text-xs text-emerald-400 mb-4">
+            <span>03 // COMPUTATION</span>
+            <i data-lucide="terminal" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Python</h3>
+          <p class="text-xs text-emerald-50/65 mt-1.5 mb-5 leading-relaxed">
+            Expressive scripting, mathematical simulation modeling, CLI automation tools, and rapid algorithmic prototyping.
+          </p>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Python 3</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Scripting</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Simulation Logic</span>
+          </div>
+        </div>
+
+        <!-- 04 // DSA IN C++ -->
+        <div class="swiss-card p-6 rounded-xl border border-emerald-500/20">
+          <div class="flex items-center justify-between font-mono text-xs text-emerald-400 mb-4">
+            <span>04 // ALGORITHMS</span>
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+          </div>
+          <h3 class="font-semibold text-lg">DSA in C++</h3>
+          <p class="text-xs text-emerald-50/65 mt-1.5 mb-5 leading-relaxed">
+            Data Structures &amp; Algorithms, memory pointers, C++ STL containers, recursion, sorting, and Big-O complexity optimization.
+          </p>
+          <div class="flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">C++ STL</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Data Structures</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">Big-O</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER CONTACT SECTION & SWISS KINETIC TRADEMARK
+  ===================================================================== -->
+  <footer id="contact" class="relative z-10 border-t border-emerald-500/20 bg-[#040706]/90 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-5 sm:px-10 pt-16 pb-12">
+      
+      <!-- Top Footer Grid: Contact Details & Dispatch Links -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-14 border-b border-emerald-500/15">
+        
+        <!-- Left Column: Identity & Direct Email Callout -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-400/25 bg-emerald-500/10 font-mono text-xs text-emerald-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>DIRECT COMMUNICATION CHANNEL</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-medium tracking-tight">
+            Let’s build something <span class="font-serif italic font-normal text-emerald-400">remarkable</span>.
+          </h2>
+
+          <p class="text-sm sm:text-base text-emerald-50/70 max-w-xl font-light leading-relaxed">
+            Open to collaborating on web development projects, C++ DSA problem-solving groups, Python simulations, and engineering initiatives at Medi-Caps University and beyond.
+          </p>
+
+          <div class="pt-3">
+            <a href="mailto:devashishanant4@gmail.com" class="inline-flex items-center gap-3 px-5 py-3.5 rounded-xl bg-emerald-400 text-[#060908] font-mono text-xs sm:text-sm font-semibold shadow-[0_0_30px_rgba(16,185,129,0.3)] hover:bg-emerald-300 transition-all">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>devashishanant4@gmail.com</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Structured Contact & Telemetry Directory -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8 font-mono text-xs">
+          
+          <div class="space-y-3">
+            <div class="text-emerald-400 uppercase tracking-widest">CONTACT DISPATCH //</div>
+            <ul class="space-y-2.5 text-emerald-50/75">
+              <li>
+                <span class="block text-[10px] text-emerald-100/45">EMAIL</span>
+                <a href="mailto:devashishanant4@gmail.com" class="hover:text-emerald-400 underline decoration-emerald-500/30 underline-offset-4 break-all">
+                  devashishanant4@gmail.com
+                </a>
+              </li>
+              <li>
+                <span class="block text-[10px] text-emerald-100/45">INSTITUTION</span>
+                <span>Medi-Caps University, Indore</span>
+              </li>
+              <li>
+                <span class="block text-[10px] text-emerald-100/45">PROGRAM</span>
+                <span>B.Tech CSE (1st Year)</span>
+              </li>
+              <li>
+                <span class="block text-[10px] text-emerald-100/45">COORDINATES</span>
+                <span>22.7196° N, 75.8577° E // INDORE, IN</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <div class="text-emerald-400 uppercase tracking-widest">PROFILES &amp; LINKS //</div>
+            <ul class="space-y-2.5 text-emerald-50/75">
+              <li>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 flex items-center gap-1.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span>GitHub Repository</span>
+                  <i data-lucide="arrow-up-right" class="w-3 h-3 opacity-60"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 flex items-center gap-1.5">
+                  <i data-lucide="linkedin" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span>LinkedIn Profile</span>
+                  <i data-lucide="arrow-up-right" class="w-3 h-3 opacity-60"></i>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:devashishanant4@gmail.com" class="hover:text-emerald-400 flex items-center gap-1.5">
+                  <i data-lucide="send" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span>Direct Email Dispatch</span>
+                </a>
+              </li>
+              <li class="pt-2">
+                <a href="#top" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-emerald-500/25 text-emerald-300 hover:bg-emerald-500/10 transition-colors">
+                  <span>RETURN TO TOP</span>
+                  <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Trademark Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-emerald-100/55">
+        <div class="flex items-center gap-2">
+          <span class="px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 font-semibold">
+            DA—26™
+          </span>
+          <span>
+            © 2026 DEVASHISH ANANT. ENGINEERED WITH THE SWISS KINETIC EMERALD TRADEMARK™ // ALL RIGHTS RESERVED.
+          </span>
+        </div>
+        <div class="text-emerald-400/80">
+          INDORE, MP, INDIA &bull; 120 FPS MOLECULAR CANVAS
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       GREENISH MOLECULAR & PARTICLE ATTRACTION ENGINE (JAVASCRIPT)
+  ===================================================================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // =====================================================================
+    // 1. LIVE UTC TELEMETRY CLOCK
+    // =====================================================================
+    function updateClock() {
+      const now = new Date();
+      const utc = now.toUTCString().split(' ')[4] + `.${String(now.getMilliseconds()).padStart(3, '0').slice(0, 2)} UTC`;
+      const clockEl = document.getElementById('hud-clock');
+      if (clockEl) clockEl.innerText = utc;
+    }
+    setInterval(updateClock, 60);
+    updateClock();
+
+    // =====================================================================
+    // 2. CUSTOM EMERALD SPRING CURSOR FOLLOWER
+    // =====================================================================
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorFollower = document.getElementById('cursor-follower');
+    const cursorHalo = document.getElementById('cursor-halo');
+    let curX = window.innerWidth * 0.5;
+    let curY = window.innerHeight * 0.5;
+    let targetX = curX;
+    let targetY = curY;
+
+    window.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      if (cursorDot) {
+        cursorDot.style.transform = `translate3d(${targetX - 3}px, ${targetY - 3}px, 0)`;
+      }
+      const hudPtr = document.getElementById('hud-pointer');
+      if (hudPtr) {
+        hudPtr.innerText = `PTR: ${String(Math.round(e.clientX)).padStart(4, '0')}×${String(Math.round(e.clientY)).padStart(4, '0')}`;
+      }
+    });
+
+    function animateCursor() {
+      curX += (targetX - curX) * 0.2;
+      curY += (targetY - curY) * 0.2;
+      const speed = Math.hypot(targetX - curX, targetY - curY);
+      const scale = 1 + Math.min(speed * 0.01, 0.35);
+
+      if (cursorFollower) {
+        cursorFollower.style.transform = `translate3d(${curX - 18}px, ${curY - 18}px, 0) scale(${scale})`;
+      }
+      requestAnimationFrame(animateCursor);
+    }
+    requestAnimationFrame(animateCursor);
+
+    document.querySelectorAll('a, button, .swiss-card').forEach((el) => {
+      el.addEventListener('mouseenter', () => {
+        if (cursorFollower) {
+          cursorFollower.classList.add('border-emerald-400', 'scale-125');
+          cursorHalo.classList.remove('opacity-0');
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        if (cursorFollower) {
+          cursorFollower.classList.remove('border-emerald-400', 'scale-125');
+          cursorHalo.classList.add('opacity-0');
+        }
+      });
+    });
+
+    // =====================================================================
+    // 3. GREENISH MOLECULAR & PARTICLE ATTRACTION CANVAS (#bg-canvas)
+    //    - Background Swiss lattice nodes gently pulled toward cursor
+    //    - Free-floating emerald molecules smoothly attracted to mouse hover
+    //    - Dynamic molecular covalent bonds between nearby particles & cursor
+    // =====================================================================
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const mouse = {
+      x: width * 0.5,
+      y: height * 0.35,
+      tx: width * 0.5,
+      ty: height * 0.35,
+      active: false
+    };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.tx = e.clientX;
+      mouse.ty = e.clientY;
+      mouse.active = true;
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        mouse.tx = e.touches[0].clientX;
+        mouse.ty = e.touches[0].clientY;
+        mouse.active = true;
+      }
+    }, { passive: true });
+
+    // Create floating greenish molecular particles
+    let molecules = [];
+    function initMolecules() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      const count = width < 768 ? 55 : 95;
+      molecules = [];
+
+      for (let i = 0; i < count; i++) {
+        molecules.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.65,
+          vy: (Math.random() - 0.5) * 0.65,
+          radius: Math.random() * 1.8 + 1.1,
+          isMint: Math.random() > 0.45,
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    initMolecules();
+    window.addEventListener('resize', initMolecules);
+
+    let time = 0;
+
+    function renderMolecularStage() {
+      time += 0.015;
+
+      // Smooth LERP for cursor attraction center
+      mouse.x += (mouse.tx - mouse.x) * 0.14;
+      mouse.y += (mouse.ty - mouse.y) * 0.14;
+
+      ctx.clearRect(0, 0, width, height);
+
+      // 1. Soft Emerald Radial Aura at Cursor Position
+      const aura = ctx.createRadialGradient(mouse.x, mouse.y, 10, mouse.x, mouse.y, 280);
+      aura.addColorStop(0, 'rgba(16, 185, 129, 0.11)');
+      aura.addColorStop(0.5, 'rgba(52, 211, 153, 0.04)');
+      aura.addColorStop(1, 'rgba(6, 9, 8, 0)');
+      ctx.fillStyle = aura;
+      ctx.fillRect(0, 0, width, height);
+
+      // 2. Subtle Swiss Background Lattice (Nodes gently pulled toward cursor)
+      const spacing = width < 768 ? 64 : 52;
+      const cols = Math.ceil(width / spacing) + 1;
+      const rows = Math.ceil(height / spacing) + 1;
+      const latticeRange = 210;
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const gx = c * spacing;
+          const gy = r * spacing;
+          const dx = mouse.x - gx;
+          const dy = mouse.y - gy;
+          const dist = Math.hypot(dx, dy);
+
+          let ox = gx + Math.sin(time + r * 0.3 + c * 0.2) * 1.4;
+          let oy = gy + Math.cos(time + c * 0.3) * 1.4;
+          let alpha = 0.07;
+
+          // Pull lattice points toward the cursor on hover
+          if (dist < latticeRange && dist > 1) {
+            const pull = Math.pow(1 - dist / latticeRange, 2);
+            ox += (dx / dist) * pull * 22;
+            oy += (dy / dist) * pull * 22;
+            alpha = 0.09 + pull * 0.32;
+          }
+
+          ctx.fillStyle = `rgba(52, 211, 153, ${alpha})`;
+          ctx.beginPath();
+          ctx.arc(ox, oy, dist < latticeRange ? 1.35 : 0.85, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      // 3. Floating Greenish Molecules — Attracted to Mouse Hover
+      const attractionRadius = 290;
+      const bondDistance = 125;
+
+      for (let i = 0; i < molecules.length; i++) {
+        const m = molecules[i];
+
+        // Vector from molecule to cursor
+        const dx = mouse.x - m.x;
+        const dy = mouse.y - m.y;
+        const dist = Math.hypot(dx, dy);
+
+        // Attract molecule toward cursor when within attraction radius
+        if (dist < attractionRadius && dist > 18) {
+          const strength = Math.pow(1 - dist / attractionRadius, 1.6);
+          // Smooth gravitational pull toward cursor + subtle orbital tangent so molecules swarm organically
+          const pullForce = 0.12 * strength;
+          const swirlForce = 0.035 * strength;
+
+          m.vx += (dx / dist) * pullForce - (dy / dist) * swirlForce;
+          m.vy += (dy / dist) * pullForce + (dx / dist) * swirlForce;
+        } else if (dist <= 18 && dist > 0.1) {
+          // Soft inner core cushion so particles orbit the cursor tip instead of collapsing into 1 pixel
+          m.vx -= (dx / dist) * 0.08;
+          m.vy -= (dy / dist) * 0.08;
+        }
+
+        // Gentle ambient drift + velocity damping
+        m.vx += Math.sin(time + m.phase) * 0.004;
+        m.vy += Math.cos(time + m.phase) * 0.004;
+        m.vx *= 0.965;
+        m.vy *= 0.965;
+
+        m.x += m.vx;
+        m.y += m.vy;
+
+        // Screen wrap-around
+        if (m.x < 0) m.x = width;
+        if (m.x > width) m.x = 0;
+        if (m.y < 0) m.y = height;
+        if (m.y > height) m.y = 0;
+
+        // Draw Molecule Node
+        const nearBoost = dist < attractionRadius ? (1 - dist / attractionRadius) * 0.5 : 0;
+        ctx.fillStyle = m.isMint
+          ? `rgba(52, 211, 153, ${0.45 + nearBoost})`
+          : `rgba(16, 185, 129, ${0.4 + nearBoost})`;
+
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, m.radius + nearBoost * 1.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw direct molecular bond to cursor when close
+        if (dist < 165) {
+          const cursorBondAlpha = (1 - dist / 165) * 0.38;
+          ctx.strokeStyle = `rgba(52, 211, 153, ${cursorBondAlpha})`;
+          ctx.lineWidth = 0.9;
+          ctx.beginPath();
+          ctx.moveTo(m.x, m.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+
+        // Draw intermolecular covalent bonds between nearby particles
+        for (let j = i + 1; j < molecules.length; j++) {
+          const m2 = molecules[j];
+          const bDist = Math.hypot(m.x - m2.x, m.y - m2.y);
+          if (bDist < bondDistance) {
+            const alpha = (1 - bDist / bondDistance) * 0.24;
+            ctx.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
+            ctx.lineWidth = 0.75;
+            ctx.beginPath();
+            ctx.moveTo(m.x, m.y);
+            ctx.lineTo(m2.x, m2.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(renderMolecularStage);
+    }
+
+    requestAnimationFrame(renderMolecularStage);
+  </script>
+
+</body>
+</html>
